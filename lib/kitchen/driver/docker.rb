@@ -337,7 +337,7 @@ module Kitchen
       end
 
       def build_run_command(image_id)
-        cmd = "run -d -p 22 --net=dockerkitchen_default"
+        cmd = "run -d -p 22 --net=test_driven_development"
         Array(config[:forward]).each {|port| cmd << " -p #{port}"}
         Array(config[:dns]).each {|dns| cmd << " --dns #{dns}"}
         Array(config[:add_host]).each {|host, ip| cmd << " --add-host=#{host}:#{ip}"}
